@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css ">
+  <title>Voopik</title>
+</head>
+<body>
+   <div id="wrapper">
+      <div id="left">
+         <div class="container">
+          <div class="logo">
+            <img src="logo.svg" alt="logo">
+          </div>
+          <div>
+          <div class="middle">
+            <div class="orange"> WE'RE</div>
+            <div class="black"> COMING</div>
+            <div class="black"> SOON</div>
+          
+          <div class="content">
+              Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with annoucements and our launch deals
+          </div>
+            <div class="sec-content">
+            <form id="form" >
+              <div id="form-group">
+              <input id="primary-input" type="email" placeholder="Email Address"  required >
+              <button type="submit" class="primary-btn" href="#">
+                <img  src="icon-arrow.svg">
+              
+              </button>
+            </input>
+              <div id="invalid-feedback">
+
+              </div>
+            </div>
+
+              
+            </form>
+            </div>
+            
+           </div> 
+          </div>
+           
+           </div>
+        </div>
+      
+      <div id="right">
+        <div id="showcase">
+          <img class="image1" src="hero-desktop.jpg" alt="image">
+          <img class="image2" src="hero-mobile.jpg" alt="image">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" >
+
+
+document.getElementById('form').addEventListener('submit',function(e){
+const form=document.getElementById('form');
+const email=document.getElementById('primary-input').value;
+const text=document.getElementById('invalid-feedback');
+
+var error= document.getElementById('primary-input');
+
+//   pattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/ ;
+
+
+
+if(!email.includes("@gmail.com"))
+{   
+ 
+    text.innerHTML="Please provide a valid email";
+    text.style.color="red";
+     
+    error.style.border = "2px solid #FF0000";
+    add();
+
+    
+}
+function add(){
+  const icons=document.getElementById('form-group');
+ var img = document.createElement('img');
+ img.setAttribute("id","icon"); 
+    img.src =  'icon-error.svg';
+    icons.insertBefore(img,error);
+    setTimeout(()=>{
+      img=document.getElementById("icon");
+      img.remove();
+    },2000);
+
+}
+
+
+setTimeout(()=>{
+text.remove();
+error.style.border.remove();
+img=document.getElementsById("icon");
+img.remove();
+},2000);
+
+
+
+
+e.preventDefault();
+});
+
+
+
+</script>
+    
+</body>
+</html>
